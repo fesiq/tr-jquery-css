@@ -43,6 +43,18 @@
                 flex-direction: row;
                 justify-content: space-between;
             }
+            .botaoed{
+                cursor: pointer;
+            }
+            .codigo{
+                width: 25vw;
+                min-width: 25vw;
+                max-width: 25vw;
+                height: 50vh;
+                min-height: 50vh;
+                max-height: 50vh;
+                display: none;
+            }
             /*ids*/
         </style>
         <style id="resultcss"></style>
@@ -54,23 +66,26 @@
                 <div id="editorhtml" class="editor">
                     <div class="head-editor">
                         Insira aqui o código HTML: 
-                        <span id="botaohtml" class="botaoed">Mostrar</span>
+                        <span id="botaoocultahtml" class="botaoed" style="display: none;">Ocultar</span>
+                        <span id="botaomostrahtml" class="botaoed">Mostrar</span>
                     </div>
-                    <input type="text" id="codhtml">
+                    <input type="text" class="codigo" id="codhtml">
                 </div>
                 <div id="editorcss" class="editor">
                     <div class="head-editor">
                         Insira aqui o código CSS: 
-                        <span id="botaocss" class="botaoed">Mostrar</span>
+                        <span id="botaoocultacss" class="botaoed" style="display: none;">Ocultar</span>
+                        <span id="botaomostracss" class="botaoed">Mostrar</span>
                     </div>
-                    <input type="text" id="codcss">
+                    <input type="text" class="codigo" id="codcss">
                 </div>
                 <div id="editorjs" class="editor">
                     <div class="head-editor">
                         Insira aqui o código Javascript: 
-                        <span id="botaojs" class="botaoed">Mostrar</span>
+                        <span id="botaoocultajs" class="botaoed" style="display: none;">Ocultar</span>
+                        <span id="botaomostrajs" class="botaoed">Mostrar</span>
                     </div>
-                    <input type="text" id="codjs">
+                    <input type="text" class="codigo" id="codjs">
                 </div>
             </div>
             <div id="dir" class="telas">
@@ -85,14 +100,36 @@
         <script id="resultscript"></script>
         <script>
             $(function(){
-                $('#botaohtml').click(function(){
-                    $('#codhtml').toggle('slow');
+                $('#botaomostrahtml').click(function(){
+                    $('#codhtml').show('slow');
+                    $('#botaomostrahtml').css("display", "none");
+                    $('#botaoocultahtml').css("display", "block");
                 });
-            $('#botaocss').click(function(){
-                    $('#codcss').toggle('slow');
+            $('#botaomostracss').click(function(){
+                    $('#codcss').show('slow');
+                    $('#botaomostracss').css("display", "none");
+                    $('#botaoocultacss').css("display", "block");
                 });
-            $('#botaojs').click(function(){
-                    $('#codjs').toggle('slow');
+            $('#botaomostrajs').click(function(){
+                    $('#codjs').show('slow');
+                    $('#botaomostrajs').css("display", "none");
+                    $('#botaoocultajs').css("display", "block");
+                });
+
+            $('#botaoocultahtml').click(function(){
+                    $('#codhtml').hide('slow');
+                    $('#botaomostrahtml').css("display", "block");
+                    $('#botaoocultahtml').css("display", "none");
+                });
+            $('#botaoocultacss').click(function(){
+                    $('#codcss').hide('slow');
+                    $('#botaomostracss').css("display", "block");
+                    $('#botaoocultacss').css("display", "none");
+                });
+            $('#botaoocultajs').click(function(){
+                    $('#codjs').hide('slow');
+                    $('#botaomostrajs').css("display", "block");
+                    $('#botaoocultajs').css("display", "none");
                 });
             });
         </script>
