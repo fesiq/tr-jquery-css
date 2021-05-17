@@ -63,6 +63,7 @@
     <body>
         <div class="container">
             <div id="esq" class="telas">
+                <span class="editor" id="botaotroca">Trocar fundo</span>
                 <div id="editorhtml" class="editor">
                     <div class="head-editor">
                         HTML: 
@@ -138,6 +139,11 @@
                     $('#codjs').hide('slow');
                     $('#botaomostrajs').css("display", "block");
                     $('#botaoocultajs').css("display", "none");
+                });
+                $('#botaotroca').click(function(){
+                    $('body').animate(
+                        $('body').css("background-image", "linear-gradient(135deg , aquamarine, cyan, blue)"), 5000
+                    );
                 });
             });
         </script>
