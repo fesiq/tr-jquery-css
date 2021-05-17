@@ -74,8 +74,16 @@
         <script id="resultscript"></script>
         <script>
             $(function(){
-                $('.botaoed').click()
-            })
+                $('#botaohtml').click(function(){
+                    $('#codhtml').hide();
+                });
+            $('#botaocss').click(function(){
+                    $('#codcss').hide();
+                });
+            $('#botaojs').click(function(){
+                    $('#codjs').hide();
+                });
+            });
         </script>
     </footer>
 </html>
