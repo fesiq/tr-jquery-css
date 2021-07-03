@@ -25,36 +25,6 @@
                 padding: 15px;
                 margin: 20px;
             }
-            .telas{
-                width: 40%;
-                min-width: 35%;
-                max-width: 35%;
-                height: calc(100vh - 100px);
-                min-height: calc(100vh - 100px);
-                max-height: calc(100vh - 100px);
-                margin: 0 5%;
-                padding: 10px;
-                background-color: lightgray;
-                border-radius: 5px;
-                float: left;
-            }
-            .head-editor{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-            }
-            .botaoed{
-                cursor: pointer;
-            }
-            .codigo{
-                width: 25vw;
-                min-width: 25vw;
-                max-width: 25vw;
-                height: 50vh;
-                min-height: 50vh;
-                max-height: 50vh;
-                display: none;
-            }
             /*ids*/
         </style>
         <style id="resultcss"></style>
@@ -62,45 +32,7 @@
 
     <body>
         <div class="container">
-            <div id="esq" class="telas">
                 <span class="editor" id="botaotroca">Trocar fundo</span>
-                <div id="editorhtml" class="editor">
-                    <div class="head-editor">
-                        HTML: 
-                        <span id="botaoocultahtml" class="botaoed" style="display: none;">Ocultar</span>
-                        <span id="botaomostrahtml" class="botaoed">Mostrar</span>
-                    </div>
-                        <!--AINDA NÃO TEMOS UMA FUNÇÃO PARA TRANSFERIR O CONTEUDO DOS INPUTS PARA O RESULTADO/CÓDIGO DA PÁGINA! -->
-                        <!--LEMBRAR DE COLOCAR OS INPUTS DENTRO DE UMA DIV E DEPOIS CRIAR UM BOTÃO "VAI". -->
-                    <input type="text" class="codigo" id="codhtml">
-                </div>
-
-                <div id="editorcss" class="editor">
-                    <div class="head-editor">
-                        CSS: 
-                        <span id="botaoocultacss" class="botaoed" style="display: none;">Ocultar</span>
-                        <span id="botaomostracss" class="botaoed">Mostrar</span>
-                    </div>
-                        <!--AINDA NÃO TEMOS UMA FUNÇÃO PARA TRANSFERIR O CONTEUDO DOS INPUTS PARA O RESULTADO/CÓDIGO DA PÁGINA! -->
-                        <!--LEMBRAR DE COLOCAR OS INPUTS DENTRO DE UMA DIV E DEPOIS CRIAR UM BOTÃO "VAI". -->
-                    <input type="text" class="codigo" id="codcss">
-                </div>
-
-                <div id="editorjs" class="editor">
-                    <div class="head-editor">
-                        Javascript: 
-                        <span id="botaoocultajs" class="botaoed" style="display: none;">Ocultar</span>
-                        <span id="botaomostrajs" class="botaoed">Mostrar</span>
-                    </div>
-                        <!--AINDA NÃO TEMOS UMA FUNÇÃO PARA TRANSFERIR O CONTEUDO DOS INPUTS PARA O RESULTADO/CÓDIGO DA PÁGINA! -->
-                        <!--LEMBRAR DE COLOCAR OS INPUTS DENTRO DE UMA DIV E DEPOIS CRIAR UM BOTÃO "VAI". -->
-                    <input type="text" class="codigo" id="codjs">
-                </div>
-            </div>
-            <div id="dir" class="telas">
-                Resultado do código: <br>
-                <div id="resulthtml"></div>
-            </div>
         </div>
     </body>
 
@@ -109,37 +41,6 @@
         <script id="resultscript"></script>
         <script>
             $(function(){
-                $('#botaomostrahtml').click(function(){
-                    $('#codhtml').show('slow');
-                    $('#botaomostrahtml').css("display", "none");
-                    $('#botaoocultahtml').css("display", "block");
-                });
-                $('#botaomostracss').click(function(){
-                    $('#codcss').show('slow');
-                    $('#botaomostracss').css("display", "none");
-                    $('#botaoocultacss').css("display", "block");
-                });
-                $('#botaomostrajs').click(function(){
-                    $('#codjs').show('slow');
-                    $('#botaomostrajs').css("display", "none");
-                    $('#botaoocultajs').css("display", "block");
-                });
-
-                $('#botaoocultahtml').click(function(){
-                    $('#codhtml').hide('slow');
-                    $('#botaomostrahtml').css("display", "block");
-                    $('#botaoocultahtml').css("display", "none");
-                });
-                $('#botaoocultacss').click(function(){
-                    $('#codcss').hide('slow');
-                    $('#botaomostracss').css("display", "block");
-                    $('#botaoocultacss').css("display", "none");
-                });
-                $('#botaoocultajs').click(function(){
-                    $('#codjs').hide('slow');
-                    $('#botaomostrajs').css("display", "block");
-                    $('#botaoocultajs').css("display", "none");
-                });
                 $('#botaotroca').click(function(){
                     $('body').animate(
                         $('body').css("background-image", "linear-gradient(135deg , aquamarine, cyan, blue)"), 5000
