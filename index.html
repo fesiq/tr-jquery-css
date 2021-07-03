@@ -32,18 +32,29 @@
 
     <body>
         <div class="container">
-                <span class="editor" id="botaotroca">Trocar fundo</span>
-        </div>
+                <span class="editor" id="botaotrocaazul">Trocar fundo para cor azul</span>
+                <span class="editor" id="botaotrocaverde">Trocar fundo para verde</span>
+                <span class="editor" id="botaotrocaoriginal">Trocar fundo para original</span>
+            </div>
     </body>
 
     <footer>
         <script src="./jquery-3.6.0.min.js"></script>
-        <script id="resultscript"></script>
         <script>
             $(function(){
-                $('#botaotroca').click(function(){
+                $('#botaotrocaazul').click(function(){
                     $('body').animate(
-                        $('body').css("background-image", "linear-gradient(135deg , aquamarine, cyan, blue)"), 5000
+                        $('body').css("background-image", "linear-gradient(135deg , aquamarine, cyan, blue)"), slow
+                    );
+                });
+                $('#botaotrocaverde').click(function(){
+                    $('body').animate(
+                        $('body').css("background-image", "linear-gradient(135deg , green, greenyellow, darkgreen)"), slow
+                    );
+                });
+                $('#botaotrocaoriginal').click(function(){
+                    $('body').animate(
+                        $('body').css("background-image", "linear-gradient(135deg , salmon, lightpink , salmon)"), slow
                     );
                 });
             });
